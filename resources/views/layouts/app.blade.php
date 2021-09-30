@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-7">
-                <a href="{{route('index', [app()->getLocale()])}}">
+                <a href="{{route('index')}}">
                     <div class="site_logo">
                         <img src="{{asset('images/logo.png')}}" alt="">
                     </div>
@@ -33,11 +33,11 @@
                     </div>
                 </a>
             </div>
-            <a href="{{route(\Illuminate\Support\Facades\Route::currentRouteName(), 'az')}}">AZ</a> <a href="{{route(\Illuminate\Support\Facades\Route::currentRouteName(), 'en')}}">EN</a>
+            <a href="{{route(\Illuminate\Support\Facades\Route::currentRouteName(), ' /lang/az')}}">AZ</a> <a href="{{route(\Illuminate\Support\Facades\Route::currentRouteName(), '/lang/en')}}">EN</a>
             <h3>@lang('page.title')</h3>
             <div class="col-lg-2 col-md-3 col-4 no-pc">
                 <div class="basket">
-                    <a href="{{route('basket.index',[app()->getLocale()])}}">
+                    <a href="{{route('basket.index')}}">
                         <div class="basket_icon">
                             <i class="fal fa-shopping-cart"></i>
                             <h6>{{\App\Helper\basketHelper::countData()}}</h6>
@@ -49,7 +49,7 @@
             </div>
                      <div class="col-lg-2 col-md-3 no-mobile">
                 <div class="basket">
-                    <a href="{{route('basket.index', [app()->getLocale()])}}">
+                    <a href="{{route('basket.index')}}">
                         <div class="basket_icon">
                             <i class="fal fa-shopping-cart"></i>
                             <h6>{{\App\Helper\basketHelper::countData()}}</h6>
@@ -61,11 +61,11 @@
             </div>
             <div class="col-md-12 main-menu">
                 <ul class="list-unstyled list-inline menu">
-                    <li class="list-inline-item"><a href="{{route('index',[app()->getLocale()])}}">Ana Səhifə</a></li>
-                    <li class="list-inline-item"><a href="{{route('all.index',[app()->getLocale()])}}">Bütün Məhsullar</a></li>
-                    <li class="list-inline-item"><a href="{{route('all.discount',[app()->getLocale()])}}">Endirimli Məhsullar</a></li>
-                    <li class="list-inline-item"><a href="{{route('about.index',[app()->getLocale()])}}">Haqqımızda</a></li>
-                    <li class="list-inline-item"><a href="{{route('contact.index',[app()->getLocale()])}}">Əlaqə</a></li>
+                    <li class="list-inline-item"><a href="{{route('index')}}">Ana Səhifə</a></li>
+                    <li class="list-inline-item"><a href="{{route('all.index')}}">Bütün Məhsullar</a></li>
+                    <li class="list-inline-item"><a href="{{route('all.discount')}}">Endirimli Məhsullar</a></li>
+                    <li class="list-inline-item"><a href="{{route('about.index')}}">Haqqımızda</a></li>
+                    <li class="list-inline-item"><a href="{{route('contact.index')}}">Əlaqə</a></li>
                 </ul>
             </div>
         </div>
@@ -74,11 +74,11 @@
     <div class="left-menu">
         <ul class="list-unstyled">
             <div class="close-menu"><i class="fas fa-times"></i></div>
-            <li><a href="{{route('index',[app()->getLocale()])}}">Ana Səhifə</a></li>
-            <li><a href="{{route('all.index',[app()->getLocale()])}}">Bütün Məhsullar</a></li>
-            <li><a href="{{route('all.discount',[app()->getLocale()])}}">Endirimli Məhsullar</a></li>
-            <li><a href="{{route('about.index',[app()->getLocale()])}}">Haqqımızda</a></li>
-            <li><a href="{{route('contact.index',[app()->getLocale()])}}">Əlaqə</a></li>
+            <li><a href="{{route('index')}}">Ana Səhifə</a></li>
+            <li><a href="{{route('all.index')}}">Bütün Məhsullar</a></li>
+            <li><a href="{{route('all.discount')}}">Endirimli Məhsullar</a></li>
+            <li><a href="{{route('about.index')}}">Haqqımızda</a></li>
+            <li><a href="{{route('contact.index')}}">Əlaqə</a></li>
         </ul>
     </div>
 </header>

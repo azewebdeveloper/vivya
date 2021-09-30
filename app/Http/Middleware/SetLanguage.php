@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Session;
+use App;
 
 class SetLanguage
 {
@@ -14,9 +16,13 @@ class SetLanguage
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        \App::SetLocale($request->language);
+        if (Session::has('locale') && in_array(Session::get('locale'), ['en', 'az'])) {
+            App::setLocale(Session::get('locale'));
+        } else {
+            App::setLocale('az');
+        }
         return $next($request);
     }
 }

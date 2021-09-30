@@ -11,10 +11,6 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{route('index',app()->getLocale())}}">Ana Səhifə</a></li>
-
-                                    <li class="breadcrumb-item"><a
-                                            href="">{{\App\Category::getField($data[0]['categoryid'],'name')}}</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">{{$data[0]['name']}}</li>
                                 </ol>
                             </nav>
                         </div>

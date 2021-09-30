@@ -24,12 +24,16 @@ use App\Http\Controllers\admin\search;
 |
 */
 
-Route::group(['prefix' => '{language?}'], function () {
+Route::middleware("SetLanguage")->group(function () {
+    Route::get('/lang/{lang}', function ($lang) {
+        session()->put('locale', $lang);
+        return redirect()->back();
+    });
     Route::get('/', [front\indexController::class, 'index'])->name('index');
     Route::get('/book/{selflink}', [front\book\indexController::class, 'index'])->name('front.single');
     Route::get('/basket/add/{id}', [basket\indexController::class, 'add'])->name('basket.add');
     Route::get('/basket/remove/{id}', [basket\indexController::class, 'remove'])->name('basket.remove');
-    Route::get('/basket/flush}', [basket\indexController::class, 'flush'])->name('basket.flush');
+    Route::get('/basket/{flush}', [basket\indexController::class, 'flush'])->name('basket.flush');
     Route::get('/basket', [basket\indexController::class, 'index'])->name('basket.index');
     Route::get('/about', [front\about\indexController::class, 'index'])->name('about.index');
     Route::get('/contact', [front\contact\indexController::class, 'index'])->name('contact.index');
@@ -64,7 +68,7 @@ Route::group(['namespace' => 'admin', 'prefix' => 'admin', 'as' => 'admin.','mid
         Route::post('/add', [editor\indexController::class, 'store'])->name('create.post');
         Route::get('/edit/{id}', [editor\indexController::class, 'edit'])->name('edit');
         Route::post('/edit/{id}', [editor\indexController::class, 'update'])->name('edit.post');
-        Route::get('/delete/{id}', [editor\indexController::class, 'delete'])->name('delete');
+        Route::get('/delete/{id}',[editor\indexController::class, 'delete'])->name('delete');
     });
 
     Route::group(['namespace' => 'book', 'prefix' => 'book', 'as' => 'book.'], function () {
